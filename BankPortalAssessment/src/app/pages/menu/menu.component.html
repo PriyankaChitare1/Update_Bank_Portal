@@ -1,0 +1,66 @@
+<div class="container-fluid" style="background-image: url(../../../assets/img/bannering.jpg)">
+    ...
+    <nav class="navbar justify-content-between" style=" padding-bottom: 40px;">
+        <a class="navbar-brand text-white"> <i class="bi bi-bank2"></i>Bank</a>
+        <span class="space"></span>
+        <a class="navbar-brand text-white"> <i class="fa fa-envelope"></i></a>
+        <a class="navbar-brand text-white">
+            <i class="fa fa-bell"></i>
+        </a>
+       
+    </nav>
+    <div class=" row" style="padding-left: 15px; padding-bottom: 20px;">
+        <div class="col-sm-5 col-md-6 text-white">Current account</div>
+    </div>
+    <div class="row" style="padding-left: 15px;padding-bottom: 20px;">
+        <div class="col-sm-6 col-lg-4 text-white" style="font-size:25px;  padding-top:10px; ">$  270 651<small style="font-size:15px">.42</small></div>
+        <div class=" col-sm-1 col-md-1 col-lg-2 text-white"><button class=" rounded-lg makeButtonstyle">Make Payment</button>
+        </div>
+        <div class="col-sm-1 col-md-1 col-lg-2 text-white"><button
+                class="rounded-lg requButtonstyle">Requisties</button></div>
+        <div class="col-sm-4 col-lg-4 text-white align-self-end d-none d-sm-block"><button class=" rounded-lg
+            requButtonstyle"> <span style="font-weight: bold"> 3 Task</span> in the amonut of $ 910</button></div>
+    </div>
+   
+    <div class = "container-fluid">
+        <div class="container" *ngFor="let payments of PaymentsDetails" id = "details">
+            <div class = "row">
+                <div class = "col-lg-6 col-sm-6 pt-2">
+                    <span style = "font-size: 18px; font-weight: bold;">{{payments.Description}}</span>
+                    <span class = "d-none d-sm-block text-muted">{{payements.Description}}</span>
+                </div>
+                <div class = "col-lg-6 col-sm-6 pt-2">
+                    <span style = "font-size: 18px; font-weight: bold;">{{payments.Category}}</span>
+                    <span class = "d-none d-sm-block text-muted">{{payements.Category}}</span>
+                </div>
+                <div class = "col-lg-2 col-sm-3 pt-3 text-center" *ngIf = "payments.Amount &it; 0">
+                    <span class = "text-danger font-weight-bold"> $ {{payments.Amount}}</span>
+                </div>
+
+                <div class="col-lg-2 col-sm-3 pt-3 text-center" *ngIf="Payments.transactionType">
+                    <span class="text-success font-weight-bold" >$ {{ payments.transactionType}}</span>
+                </div>
+
+            </div>
+            <div class="col-lg-2 col-sm-3 pt-3 text-center" *ngIf="payments.transactionType=='credit'">
+                <button type="button" class="btn btn-md btn-outline-success">{{ Payments.transactionType }}</button>
+            </div>
+            <div class="col-lg-2 col-sm-3 pt-3 text-center" *ngIf="Payments.Category=='debit'">
+                <button type="button" class="btn btn-md btn-outline-danger">{{payments.transactionType}}</button>
+            </div>
+            <div class="col-lg-2 col-sm-3 pt-2">
+                <div class="nav navbar-nav">
+                    <li class="nav-item dropdown ">
+                        <a href="#" class="nav-link link-light dropdown-toggle" data-bs-toggle="dropdown">
+                            More</a>
+                    </li>
+                </div> 
+            </div>
+        </div>
+
+            
+        
+    </div>
+
+
+</div>

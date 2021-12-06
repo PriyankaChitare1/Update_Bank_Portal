@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PaymentDetailsService } from 'src/app/service/payment-details.service';
+import * as data from '../../data.json';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

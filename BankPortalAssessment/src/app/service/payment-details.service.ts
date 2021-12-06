@@ -7,10 +7,11 @@ import { Injectable } from '@angular/core';
 })
 export class PaymentDetailsService {
 
-  apiUrl: string = 'http://localhost:3000/paymentsDetails';
-  headers = new HttpHeaders().set('content-Type','application/json');
-
   constructor(private http: HttpClient) { }
-
+  
+  getPaymentDetailsList(){
+    let  apiUrl = 'https://api.jsonbin.io/b/61a9ae9401558c731ccd4d3b';
+    return this.http.get(apiUrl);
+  }
 
 }
